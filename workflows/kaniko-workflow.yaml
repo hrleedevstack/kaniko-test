@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: kaniko
+  namespace: demo
+
+spec:
+  entrypoint: kaniko
+    
+  templates:
+  - name: kaniko
+    container:
+        image: gcr.io/kaniko-project/executor:latest
+        args: ["--dockerfile=/dockerfiles/dockerfile",
+                "--context=git://github.com/hrleedevstack/kaniko-test.git#refs/heads/main",
+                "--no-push"]
