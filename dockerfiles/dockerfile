@@ -1,2 +1,2 @@
 FROM ubuntu
-ENTRYPOINT ["/bin/bash", "-c", "echo hello event1312312322"]
+ENTRYPOINT ["/bin/bash", "-c", "echo hello event1"]
